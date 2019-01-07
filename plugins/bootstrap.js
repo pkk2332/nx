@@ -1,3 +1,4 @@
-if (process.BROWSER_BUILD) {
-  require('bootstrap')
-}
+require('jquery')
+// require('popper.js') 
+
+require('bootstrap')

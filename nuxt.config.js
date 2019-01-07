@@ -47,7 +47,7 @@ module.exports = {
   */
   loading: { 
     color: 'blue',
-    height: '6px'
+    height: '5px'
   },
 
   /*
@@ -90,27 +90,18 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    // extractCSS:true,
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      })
-    ],
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-         
-}
-    
+    extractCSS:true,
+    // plugins: [
+    //   new webpack.ProvidePlugin({
+    //     $: "jquery"
+    //   })
+    // ],
+    /*
+    ** Run ESLint on save
+    */
+    extend(config, { isDev, isClient }) {
 
+    }
+  }
   
 }
